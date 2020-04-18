@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { APP_ROUTES } from './app.routes';
-
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from "@angular/common/http"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +24,9 @@ import { ContactoComponent } from './contacto/contacto.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    APP_ROUTES
+    APP_ROUTES,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
