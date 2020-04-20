@@ -23,13 +23,21 @@ export class ContactoComponent implements OnInit {
 	}
 
 	sendEmail() {
+		if(!this.name || !this.email || !this.subject || !this.message) {
+			swal.fire({
+				icon: 'error',
+				title: 'Error',
+				text: 'Debe completar todos los campos'
+			})
+			return
+		}
 		this.loading = true
 		if(this.loading) {
 			swal.fire({
 				title: 'Enviando mensaje!',
 				imageUrl: 'assets/images/load.gif',
 				showConfirmButton: false
-			  })
+			})
 		}
 		let data: Object = {
 			name: this.name,
